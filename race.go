@@ -14,7 +14,7 @@ func Race(tasks ...Task) error {
 
 	// Used for synchronizing access to done counter.
 	var updateMutex sync.Mutex
-	done := 0
+	isPending := true
 
 	if len(tasks) > 0 {
 		finMutex.Lock()
@@ -25,9 +25,9 @@ func Race(tasks ...Task) error {
 			err := t.Run()
 			updateMutex.Lock()
 			defer updateMutex.Unlock()
-			done++
-			if finErr == nil && (done == len(tasks) || err != nil) {
+			if isPending {
 				finErr = err
+				isPending = false
 				finMutex.Unlock()
 			}
 		}(t)

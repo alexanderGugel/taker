@@ -9,7 +9,7 @@ type TimeoutError struct {
 }
 
 func (e *TimeoutError) Error() string {
-	return "exceeded " + string(e.Limit) + " timeout"
+	return "exceeded " + e.Limit.String() + " timeout"
 }
 
 type TimeoutTask struct {
