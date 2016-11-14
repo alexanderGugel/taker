@@ -1,0 +1,20 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "cdOCt0Yb+hdErz8NAQqayxPmRsY=",
+			"origin": "github.com/hashicorp/go-multierror/vendor/github.com/hashicorp/errwrap",
+			"path": "github.com/hashicorp/errwrap",
+			"revision": "8484912a3b9987857bac52e0c5fec2b95f419628",
+			"revisionTime": "2016-11-06T17:22:40Z"
+		},
+		{
+			"checksumSHA1": "jplwF0kQyDhu2Wqq7cmZu0SHjOI=",
+			"path": "github.com/hashicorp/go-multierror",
+			"revision": "8484912a3b9987857bac52e0c5fec2b95f419628",
+			"revisionTime": "2016-11-06T17:22:40Z"
+		}
+	],
+	"rootPath": "github.com/alexanderGugel/taker"
+}
