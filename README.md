@@ -62,10 +62,6 @@ $ go get github.com/alexanderGugel/taker
 
 **taker** currently uses [govendor](https://github.com/kardianos/govendor) for vendoring dependencies.
 
-## Credits
-
-* [Stumped](https://thenounproject.com/Mattebrooks/collection/objecticons/?i=63913) by Nick Abrams from the Noun Project
-
 ## License
 
 [MIT](LICENSE)
