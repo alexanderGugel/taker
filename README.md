@@ -1,4 +1,4 @@
-# ![taker](media/stumped.png)
+# :construction_worker: taker
 
 [![Build Status](http://img.shields.io/travis/alexanderGugel/taker.svg?style=flat-square)][travis]
 [![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)][godocs]
