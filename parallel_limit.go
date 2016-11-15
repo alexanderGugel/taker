@@ -5,16 +5,20 @@ import (
 	"strconv"
 )
 
+// See http://www.golangpatterns.info/concurrency/semaphores
 type empty struct{}
+
+// Semaphore implements a semaphore using an empty channel with specified buffer
+// size.
 type Semaphore chan empty
 
+// NewSemaphore creates a new semaphore of the specified capacity.
 func NewSemaphore(n int) Semaphore {
 	return make(chan empty, n)
 }
 
 // Up acquires n resources.
 func (s Semaphore) Up(n int) {
-	// TODO use nil instead of empty
 	e := empty{}
 	for i := 0; i < n; i++ {
 		s <- e
@@ -28,15 +32,18 @@ func (s Semaphore) Down(n int) {
 	}
 }
 
+// InvalidLimitError represents a runtime error that occurs when passing an
+// invalid limit to ParallelLimit.
 type InvalidLimitError struct {
 	Limit int
 }
 
+// Error returns an error string.
 func (e *InvalidLimitError) Error() string {
 	return "invalid limit " + strconv.Itoa(e.Limit)
 }
 
-// Parallel runs the supplied tasks in parallel.
+// ParallelLimit runs the supplied tasks in parallel.
 // The function returns once all tasks have been run.
 // If there is an error, it will be of type *multierror.Error.
 func ParallelLimit(limit int, tasks ...Task) error {

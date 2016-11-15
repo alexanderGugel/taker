@@ -5,7 +5,7 @@ import "sync"
 // Race runs the supplied tasks at the same time.
 // If any of the tasks returns an error, the error will be returned and
 // subsequent errors of the remaining tasks will be ignored.
-// Equivalent to Promise.race
+// Equivalent to Promise.race.
 func Race(tasks ...Task) error {
 	var finErr error
 

@@ -19,6 +19,7 @@ func (r *task) Run() error {
 }
 
 // Wrap creates a new task from a run function.
+// This is useful in case you want to wrap an arbitrary function into a task.
 func Wrap(run func() error) Task {
 	return &task{run}
 }
